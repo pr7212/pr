@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Missed Pickup</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Report Missed Pickup</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="schedule.html">Schedule</a> |
+      <a href="report.html">Report Missed Pickup</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="reportForm">
+      <label>Name:</label><br>
+      <input type="text" id="name" placeholder="Enter your full name" required><br><br>
+
+     <label>Estate:</label><br>
+<select id="estate" required>
+  <option value="">-- Select estate --</option>
+  <option value="kasarani">Kasarani</option>
+  <option value="roysambu">Roysambu</option>
+  <option value="alsoaps">Allsops</option>
+</select>
+<br><br>
+
+      <label>Message:</label><br>
+      <textarea id="message" placeholder="Describe the missed pickup" required></textarea><br><br>
+
+      <button type="submit">Submit Report</button>
+    </form>
+
+    <p id="confirmation"></p>
+
+    <script src="js/report.js"></script>
+  </main>
+</body>
+</html>
