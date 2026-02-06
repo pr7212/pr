@@ -3,235 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explore Kenya & Maasai Mara reserve park</title>
-  <meta name="description" content="Discover wildlife, culture, and adventure in Narok & Maasai Mara. Book your tour today!">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/7e7e5b2e7a.js" crossorigin="anonymous"></script>
-  <style>
-    body { font-family: 'Segoe UI', Arial, Helvetica, sans-serif; transition: background 0.3s, color 0.3s; }
-    .logo { font-family: 'Segoe UI', Arial, Helvetica, sans-serif; font-weight: bold; }
-    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 1s, transform 1s; }
-    .fade-in.visible { opacity: 1; transform: none; }
-    .footer-author { display: inline; font-weight: bold; color: #f39c12; }
-    .contact-icons { margin-right: 8px; color: #f39c12; }
-    .gallery { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin: 30px 0; }
-    .gallery img { width: 220px; height: 150px; object-fit: cover; border-radius: 12px; box-shadow: 0 2px 8px #2222; transition: transform 0.3s; }
-    .gallery img:hover { transform: scale(1.07); }
-    .testimonial-cards { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin: 30px 0; }
-    .testimonial-card { background: #fff; border-radius: 14px; box-shadow: 0 2px 12px #2c3e5022; padding: 18px 16px; max-width: 260px; font-size: 1rem; color: #444; }
-    .testimonial-card .author { font-weight: bold; color: #f39c12; margin-top: 10px; display: block; }
-    #attractionSearch { max-width:300px;padding:8px;margin:20px auto;display:block;border-radius:6px;border:1px solid #ddd; }
-    .dark-mode { background: #222 !important; color: #f5f5f5 !important; }
-    .dark-mode .card, .dark-mode .testimonial-card { background: #333 !important; color: #f5f5f5 !important; }
-    .dark-mode .footer-author { color: #ffd700 !important; }
-    .dark-toggle { position: fixed; top: 18px; right: 18px; z-index: 99; background: #f39c12; color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; cursor: pointer; box-shadow: 0 2px 8px #2222; }
-    .hero-slider { position: relative; min-height: 350px; overflow: hidden; }
-    .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s; background-size: cover; background-position: center; }
-    .hero-slide.active { opacity: 1; z-index: 1; }
-    .hero-content { position: relative; z-index: 2; text-align: center; color: white; padding: 120px 20px 100px 20px; }
-    .hero-content h2 { font-size: 2.5rem; margin-bottom: 18px; text-shadow: 2px 4px 12px #0008; }
-    .hero-content p { font-size: 1.3rem; margin-bottom: 30px; letter-spacing: 1px; }
-    .hero-content .btn { margin-top: 20px; }
-    .hero-slider::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #2c3e50cc 0%, #00000088 100%); z-index: 0; border-radius: 0 0 40px 40px; }
-    .slider-controls { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 10px; }
-    .slider-dot { width: 12px; height: 12px; border-radius: 50%; background: #fff; opacity: 0.6; cursor: pointer; border: 2px solid #f39c12; }
-    .slider-dot.active { opacity: 1; background: #f39c12; }
-    @media (max-width: 700px) {
-      .gallery img { width: 95vw; height: 120px; }
-      .testimonial-cards { flex-direction: column; align-items: center; }
-      .hero-content { padding: 70px 8px 60px 8px; }
-    }
-    /* Mobile menu styles */
-    .menu-toggle { display: none; flex-direction: column; justify-content: center; align-items: center; width: 40px; height: 40px; background: transparent; border: none; cursor: pointer; }
-    .menu-toggle .hamburger { width: 100%; height: 4px; background: #f39c12; border-radius: 2px; position: relative; }
-    .menu-toggle .hamburger::before, .menu-toggle .hamburger::after { content: ""; position: absolute; width: 100%; height: 4px; background: #f39c12; border-radius: 2px; transition: transform 0.3s; }
-    .menu-toggle .hamburger::before { top: -10px; }
-    .menu-toggle .hamburger::after { top: 10px; }
-    #mainNav { display: flex; flex-direction: column; gap: 10px; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; padding: 20px 0; border-radius: 0 0 12px 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); transform: translateY(-20px); opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s; }
-    #mainNav.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-    #mainNav a { padding: 10px 20px; color: #333; border-radius: 8px; transition: background 0.3s, color 0.3s; }
-    #mainNav a:hover { background: #f39c12; color: #fff; }
-    @media (max-width: 700px) {
-      .menu-toggle { display: flex; }
-      .nav-links { display: none; flex-direction: column; gap: 10px; }
-      #mainNav { position: static; display: flex; flex-direction: column; gap: 10px; width: 100%; background: transparent; padding: 0; border-radius: 0; box-shadow: none; transform: none; opacity: 1; pointer-events: auto; }
-    }
-  </style>
-  
+  <title>Nairobi Garbage Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <button class="dark-toggle" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-  <!--
-    Dark toggle button:
-    - Toggles the `dark-mode` class on the <body> to switch colors.
-    - Accessible via aria-label and easy to move to a toolbar if needed.
-  -->
-  <!-- Navigation -->
   <header>
-    <nav aria-label="Main navigation">
-      <!-- Mobile menu note:
-        - The .menu-toggle button controls the mobile navigation open/close state.
-        - It updates aria-expanded for accessibility and toggles the `open` class on #mainNav.
-        - Styles for the mobile layout are in style.css under the media queries.
-      -->
-      <h1 class="logo">Mara Adventures</h1>
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger"></span>
-      </button>
-      <ul class="nav-links" id="mainNav">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#attractions">Attractions</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#booking">Booking</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="bookings.html">host</a></li>
-      </ul>
-    </nav>
+    <h1>Welcome to Nairobi Garbage Tracker</h1>
+    <nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="schedule.html">Schedule</a></li>
+    <li><a href="report.html">Report Missed Pickup</a></li>
+  </ul>
+</nav>
+
   </header>
 
   <main>
-    <!-- Hero Section with Slider -->
-    <section id="home" class="hero-slider" aria-labelledby="hero-title">
-      <div class="hero-slide active" style="background-image:url('mara.jpg');"></div>
-      <div class="hero-slide" style="background-image:url('sunset.jpg');"></div>
-      <div class="hero-slide" style="background-image:url('giraffe.jpg');"></div>
-      <div class="hero-content">
-        <h2 id="hero-title">Discover the Beauty of Kenya & Maasai Mara</h2>
-        <p>Wildlife • Culture • Adventure</p>
-        <a href="#booking" class="btn">Book a Tour</a>
-      </div>
-      <div class="slider-controls">
-        <span class="slider-dot active"></span>
-        <span class="slider-dot"></span>
-        <span class="slider-dot"></span>
-      </div>
-    </section>
+   <img src="garbage.jpg" alt="Garbage Icon" class="hero-icon">
 
-    <!-- Attractions -->
-    <section id="attractions" class="section" aria-labelledby="attractions-title">
-      <h2 id="attractions-title">Top Attractions</h2>
-      <!--
-        Attraction search input:
-        - Filters the cards in .cards by matching card text.
-        - Handled by a JS listener that hides non-matching .card elements.
-      -->
-      <input type="text" id="attractionSearch" placeholder="Search attractions...">
-      <div class="cards">
-        <div class="card fade-in">
-          <img src="lion.jpg" alt="Lion in Maasai Mara" loading="lazy">
-          <h3>Big Five Wildlife</h3>
-          <p>See lions, elephants, buffalo, leopards, and rhinos in their natural habitat.</p>
-        </div>
-        <div class="card fade-in">
-          <img src="masai dancing.jpg" alt="Maasai people dancing" loading="lazy">
-          <h3>Maasai Culture</h3>
-          <p>Experience Maasai traditions, dance, and homestays.</p>
-        </div>
-        <div class="card fade-in">
-          <img src="migration.jpg" alt="Wildebeest Migration at Mara River" loading="lazy">
-          <h3>Wildebeest Migration</h3>
-          <p>Witness the world-famous migration at the Mara River.</p>
-        </div>
-      </div>
-    </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="section" aria-labelledby="gallery-title">
-      <h2 id="gallery-title">Photo Gallery</h2>
-      <div class="gallery">
-        <img src="mara1.jpg" alt="Maasai Mara Landscape" loading="lazy">
-        <img src="elephant.jpg" alt="Elephants in Mara" loading="lazy">
-        <img src="masai people.jpg" alt="Maasai People" loading="lazy">
-        <img src="giffle.jpg" alt="Giraffe in Mara" loading="lazy">
-        <img src="sunset.jpg" alt="Sunset over Mara" loading="lazy">
-        <img src="river.jpg" alt="Mara River" loading="lazy">
-      </div>
-    </section>
+    <h2>Your estate garbage collection, made easy</h2>
 
-    <!-- Booking Form -->
-    <section id="booking" class="section" aria-labelledby="booking-title">
-      <h2 id="booking-title">Book Your Tour</h2>
-      <!--
-        Booking form notes:
-        - Fields: name, email, phone, date.
-        - On submit the handler reads these inputs and appends an object to
-          localStorage key "bookings" as JSON. Shape:
-            { name: 'Full Name', email: 'you@example.com', phone: '...', date: 'YYYY-MM-DD' }
-        - The success message is written into #message.
-        - localStorage is used so bookings persist in the browser (no server).
-      -->
-      <form id="bookingForm" autocomplete="on">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Full Name" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
-
-        <label for="phone">Phone number</label>
-        <input type="tel" id="phone" name="phone" placeholder="phone number" required>
-
-        <label for="date">Tour Date</label>
-        <input type="date" id="date" name="date" required>
-        <button type="submit" class="btn">Submit</button>
-      </form>
-      <p id="message" aria-live="polite"></p>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section" aria-labelledby="testimonials-title">
-      <h2 id="testimonials-title">Testimonials</h2>
-      <div class="testimonial-cards">
-        <div class="testimonial-card">
-          <span>“The best safari ever! Saw all the Big Five and the guides were amazing.”</span>
-          <span class="author">gideon rana, USA</span>
-        </div>
-        <div class="testimonial-card">
-          <span>“Maasai Mara is breathtaking. The culture and wildlife are unforgettable.”</span>
-          <span class="author">Aisha, Kenya</span>
-        </div>
-        <div class="testimonial-card">
-          <span>“Highly recommend! Booking was easy and the experience was magical.”</span>
-          <span class="author">joshua rana, osero</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Google Maps Embed -->
-    <section id="map" class="section" aria-labelledby="map-title">
-      <h2 id="map-title">Find Us in Maasai Mara</h2>
-      <div style="display:flex;justify-content:center;">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.770258829413!2d35.14393047404584!3d-1.4061086985930136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f7e9c8e2c7b7b%3A0x7c7e2e2e2e2e2e2e!2sMaasai%20Mara%20National%20Reserve!5e0!3m2!1sen!2ske!4v1694870000000!5m2!1sen!2ske"
-          width="90%" height="300" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section>
-
-    <!-- Contact FOOTER -->
-    <section id="contact" class="section" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact Us</h2>
-      <p>
-        <span class="contact-icons"><i class="fas fa-envelope"></i></span>
-        Email: <a href="mailto:hyperqash1@gmail.com">hyperqash1@gmail.com</a>
-      </p>
-      <p>
-        <span class="contact-icons"><i class="fas fa-phone"></i></span>
-        Phone: <a href="tel:+25493890539">+254 93890539</a>
-      </p>
-    </section>
+    <p>Check your collection schedule or report missed pickups below.</p>
+    <p id="greeting"></p>
   </main>
-
   <footer>
-    <p>&copy; 2025 Narok Adventures coded by <span class="footer-author">prince lemayian</span>. All rights reserved.</p>
-  </footer>
+  <p>&copy; 2026 Nairobi Garbage Tracker</p>
+</footer>
 
-  <!--
-    NOTE: This block contains the main UI scripts. If you see this page served
-    with <script src="script.js"> plus inline code here, some browsers will
-    ignore the inline code because the script tag specifies a src attribute.
-    Recommended: move this inline code to script.js and use a single
-    <script src="script.js"></script> so behavior is consistent.
-  -->
-  <script src="script.js"></script>
+
+<script src="js/main.js"></script>
+
+
+  
 </body>
 </html>
